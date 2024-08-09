@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- motor node -->
+  <include file="$(find xycar_motor)/launch/xycar_motor.launch" />
+
+  <!-- android joy drive -->
+  <node name="controller" pkg="track_drive" type="controller.py" output="screen"/>
+
+</launch>

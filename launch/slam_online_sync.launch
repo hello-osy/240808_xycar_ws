@@ -1,0 +1,16 @@
+<launch> 
+
+  <!-- Lidar node -->
+  <include file="$(find xycar_lidar)/launch/xycar_lidar.launch" />
+
+  <!-- IMU sensor node -->
+  <include file="$(find xycar_imu)/launch/xycar_imu.launch" />
+
+  <!-- conver imu to odom -->
+  <node name="imu_to_odom" pkg="track_drive" type="imu2odom.py" output="screen"/>
+  
+  <!-- SLAM online sync node
+  <include file="$(find slam_toolbox)/online_sync.launch" /> -->
+
+  
+</launch>
